@@ -1,0 +1,9 @@
+.idea
+node_modules
+
+public/client.js
+
+typings/*
+!typings/bundle.d.ts
+!typings/live2d
+!typings/clmtrackr
