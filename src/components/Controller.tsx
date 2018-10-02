@@ -3,9 +3,11 @@ import State from '../State';
 
 class Controller extends React.Component<Controller.Props, void> {
   render(): JSX.Element {
-    const { tracking, showVideo, showTrace, controllerVisible, currentAssets } = this.props.mutable,
+    const { tracking, showVideo, showTrace, controllerVisible, currentAssets, live2DParameter } = this.props.mutable,
       style = { display: currentAssets ? 'block' : 'none', marginTop: '8px' };
     return <div style={{ display: (controllerVisible || !currentAssets) ? 'block' : 'none' }}>
+      <p>blinkCount: {live2DParameter ? live2DParameter['blinkCount'] : 0}</p>
+      <p>eyeOpen: {live2DParameter ? live2DParameter['PARAM_EYE_R_OPEN'] : 1}</p>
       <select defaultValue='0' onChange={event => this.props.observer.onChangeModel(event.currentTarget['value'])} >
         <option value='0' disabled={true}>Select model</option>
         {Object.keys(this.props.immutable.models).map((name, index) => <option key={index} value={name}>{name}</option>)}
@@ -33,6 +35,7 @@ namespace Controller {
         physics: any;
         textures: HTMLImageElement[];
       };
+      live2DParameter?: {[name: string]: number};
     };
     immutable: {
       models: {[name: string]: State.Model};

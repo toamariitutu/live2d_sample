@@ -49,9 +49,6 @@ class Live2DCanvas extends React.Component<Live2DCanvas.Props, void> {
       this.live2DPhysics = L2DPhysics.load(physics);
       textures.forEach((image, index) => this.live2DModel.setTexture(index, this.createTexture(image)));
     }
-    console.log('live2DModel', this.live2DModel)
-    console.log('L2DPhysics', this.live2DPhysics)
-    console.log('live2DParameter', this.props.mutable.live2DParameter)
     return false;
   }
 
@@ -105,7 +102,6 @@ class Live2DCanvas extends React.Component<Live2DCanvas.Props, void> {
     if(!(this.live2DModel && this.live2DPhysics && this.props.mutable.live2DParameter)) {
       return;
     }
-    console.log('fuga')
     this.webGLContext.clear(this.webGLContext.COLOR_BUFFER_BIT);
     Object.keys(this.props.mutable.live2DParameter).forEach(key =>
       this.live2DModel.setParamFloat(key, this.props.mutable.live2DParameter[key])
