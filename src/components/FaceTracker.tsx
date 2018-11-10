@@ -4,7 +4,7 @@ import calculateWorker from '../workers/calculateWorker';
 
 const BLINK_SAMPLING_COUNT = 100;
 
-class FaceTracker extends React.Component<FaceTracker.Props, void> {
+class FaceTracker extends React.Component<FaceTracker.Props, {}> {
   private tracker: clm.tracker;
   private video: HTMLVideoElement;
   private traceCanvas: HTMLCanvasElement;
@@ -58,7 +58,7 @@ class FaceTracker extends React.Component<FaceTracker.Props, void> {
       transform: 'scaleX(-1)',
       filter: 'FlipH',
       msFilter: 'FlipH',
-      position: 'absolute'
+      position: 'absolute' as 'absolute'
     },
       styleHidden = { display: 'none' },
       { showVideo, showTrace, tracking } = this.props.mutable;

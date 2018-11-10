@@ -1,7 +1,7 @@
 import * as React from 'react';
 import State from '../State';
 
-class AssetsLoader extends React.Component<AssetsLoader.Props, void> {
+class AssetsLoader extends React.Component<AssetsLoader.Props, {}> {
   private manager: PlatformManager;
   componentDidMount(): void {
     this.manager = new PlatformManager();

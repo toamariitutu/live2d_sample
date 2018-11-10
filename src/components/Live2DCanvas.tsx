@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-class Live2DCanvas extends React.Component<Live2DCanvas.Props, void> {
+class Live2DCanvas extends React.Component<Live2DCanvas.Props, {}> {
   private webGLContext: WebGLRenderingContext;
   private live2DModel: Live2DModel;
   private live2DPhysics: Live2DPhysics;

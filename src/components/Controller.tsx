@@ -1,7 +1,7 @@
 import * as React from 'react';
 import State from '../State';
 
-class Controller extends React.Component<Controller.Props, void> {
+class Controller extends React.Component<Controller.Props, {}> {
   render(): JSX.Element {
     const { tracking, showVideo, showTrace, controllerVisible, currentAssets, live2DParameter } = this.props.mutable,
       style = { display: currentAssets ? 'block' : 'none', marginTop: '8px' };

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-class UserMedia extends React.Component<UserMedia.Props, void> {
+class UserMedia extends React.Component<UserMedia.Props, {}> {
   shouldComponentUpdate(props: UserMedia.Props) {
     if (props.mutable.tracking && !this.props.mutable.tracking) {
       if (this.props.mutable.stream) {

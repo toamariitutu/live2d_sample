@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-class Loading extends React.Component<Loading.Props, void> {
+class Loading extends React.Component<Loading.Props, {}> {
   shouldComponentUpdate(props: Loading.Props): boolean {
     return props.mutable.loading !== this.props.mutable.loading;
   }
@@ -35,7 +35,7 @@ class Loading extends React.Component<Loading.Props, void> {
 
   render(): JSX.Element {
     return <div style={{ position: 'absolute', width: '100%', height: '100%', minHeight: '180px', display: this.props.mutable.loading ? 'block' : 'none' }}>
-	  <div style={{width: '48px', height: '48px', margin: '0 auto', position: 'relative', bottom: '-60px', zIndex: '99', WebkitAnimationName: 'fade, rotate',
+	  <div style={{width: '48px', height: '48px', margin: '0 auto', position: 'relative', bottom: '-60px', zIndex: 99, WebkitAnimationName: 'fade, rotate',
         WebkitAnimationDuration: '.8s', WebkitAnimationTimingFunction: 'linear', WebkitAnimationIterationCount: 'infinite' }}>
 	    <span style={this.createSpanStyle(3, 19, '#333')}></span>
 	    <span style={this.createSpanStyle(7, 30)}></span>
